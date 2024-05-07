@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrls: ['./login.component.scss'] 
 })
 export class LoginComponent {
-  emailControl = new FormControl('');
-  passwordControl = new FormControl('');
   hide = true;
+  loginForm: FormGroup; 
 
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
@@ -19,17 +18,13 @@ export class LoginComponent {
     });
   } 
 
-  togglePasswordVisibility(event: Event): void {
-    event.preventDefault();
+  togglePasswordVisibility(): void {
     this.hide = !this.hide;
   }
   
-
-  loginForm: FormGroup;
-
-
   onSubmit() {
     if (this.loginForm.valid) {
+      // Redirect to dashboard if form is valid
       this.router.navigate(['/home/dashboard']); 
       console.log('Form submitted successfully');
     } else {

@@ -1,75 +1,75 @@
 <div class="main-section">
-    <div class="site-container">
-      <div class="site-header">
-        <div class="site-logo">
-          <img src="../assets/Image 2.png" alt="">
-        </div>
-      </div>
-      <div class="site-login-area">
-          <div class="flex-box">
-            <div class="social-icons">
-              <a href="#" class="icon facebook"></a>
-              <a href="#" class="icon twitter"></a>
-              <a href="#" class="icon instagram"></a>
-              <a href="#" class="icon youtube"></a>
-            </div>
-           <p class="copy-write">© 2023 PCFS Solutions. All Rights Reserved.</p>
-          </div>
-         <div class="form-container">
-            <div class="login-form-area">
-              <div class="form-area">
-                <div class="area-header">
-                  <h1>Sign In</h1>
-                  <p>
-                    Fill in the field below with your <br>
-                    Credentials to enter the portal.
-                  </p>
-                </div>
-                <form (submit)="onSubmit()" [formGroup]="loginForm">
-                  <mat-form-field appearance="outline">
-                    <mat-icon matPrefix>mail_outline</mat-icon>
-                    <input matInput type="email" placeholder="Please enter your e-Mail" formControlName="email">
-                    <mat-error *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
-                      Please enter a valid email address
-                    </mat-error>
-                  </mat-form-field>
-                
-                  <mat-form-field appearance="outline">
-                    <mat-icon matPrefix>lock_outline</mat-icon>
-                    <input matInput [type]="hide ? 'password' : 'text'" placeholder="Please enter your Password" formControlName="password">
-                    <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
-                      <mat-icon>{{ hide ? 'visibility_off_outline' : 'visibility_outline' }}</mat-icon>
-                    </button>
-                    <mat-error *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
-                      Password must be at least 6 characters long
-                    </mat-error>
-                  </mat-form-field>
-                
-                  <div class="forgot-pass">
-                    <a href="#">Forgot Password?</a>
-                  </div>
-                
-                  <div class="form-action">
-                    <button mat-raised-button color="primary" type="submit">Login</button>
-                    <div class="signIn-area">
-                      Don’t have an account? <a href="#">Register with us</a>
-                    </div>
-                  </div>
-                
-                  <div class="form-footer">
-                    <p>By clicking on Login, you agree to our <a href="#">Terms and Conditions</a> and acknowledge our <a href="#">Privacy Policy</a>.</p>
-                  </div>
-                </form>
-                
-              </div>
-              
-            </div>
-            <div class="update-page">
-              <p>
-                Last Updated on September 07, 2023
-              </p>
-            </div>
-         </div>
+  <div class="site-container">
+    <div class="site-header">
+      <div class="site-logo">
+        <img src="../assets/Image 2.png" alt="">
       </div>
     </div>
+    <div class="site-login-area">
+        <div class="flex-box">
+          <div class="social-icons">
+            <a href="#" class="icon facebook"></a>
+            <a href="#" class="icon twitter"></a>
+            <a href="#" class="icon instagram"></a>
+            <a href="#" class="icon youtube"></a>
+          </div>
+         <p class="copy-write">© 2023 PCFS Solutions. All Rights Reserved.</p>
+        </div>
+       <div class="form-container">
+          <div class="login-form-area">
+            <div class="form-area">
+              <div class="area-header">
+                <h1>Sign In</h1>
+                <p>
+                  Fill in the field below with your <br>
+                  Credentials to enter the portal.
+                </p>
+              </div>
+              <form (submit)="onSubmit()" [formGroup]="loginForm">
+                <mat-form-field appearance="outline">
+                  <mat-icon matPrefix>mail_outline</mat-icon>
+                  <input matInput type="email" placeholder="Please enter your e-Mail" formControlName="email">
+                  <mat-error *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                    Please enter a valid email address
+                  </mat-error>
+                </mat-form-field>
+              
+                <mat-form-field appearance="outline">
+                  <mat-icon matPrefix>lock_outline</mat-icon>
+                  <input matInput [type]="hide ? 'password' : 'text'" placeholder="Please enter your Password" formControlName="password">
+                  <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                    <mat-icon>{{ hide ? 'visibility_off_outline' : 'visibility_outline' }}</mat-icon>
+                  </button>
+                  <mat-error *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                    Password must be at least 6 characters long
+                  </mat-error>
+                </mat-form-field>
+              
+                <div class="forgot-pass">
+                  <a href="#">Forgot Password?</a>
+                </div>
+              
+                <div class="form-action">
+                  <button mat-raised-button color="primary" type="submit">Login</button>
+                  <div class="signIn-area">
+                    Don’t have an account? <a href="#">Register with us</a>
+                  </div>
+                </div>
+              
+                <div class="form-footer">
+                  <p>By clicking on Login, you agree to our <a href="#">Terms and Conditions</a> and acknowledge our <a href="#">Privacy Policy</a>.</p>
+                </div>
+              </form>
+              
+            </div>
+            
+          </div>
+          <div class="update-page">
+            <p>
+              Last Updated on September 07, 2023
+            </p>
+          </div>
+       </div>
+    </div>
+  </div>
 </div>
