@@ -1,0 +1,272 @@
+// Variables
+$primary-color: #2786FF;
+$error-color: orangered;
+$success-color: green;
+$card-width: 940px;
+
+// Mixins
+@mixin flex-box($gap: 10px) {
+    display: flex;
+    align-items: center;
+    gap: $gap;
+}
+
+.bar-card{
+    .flex-box{
+        @include flex-box();
+    }
+}
+.page-heading{
+    font-weight: 500;
+}
+.banner-blue{
+   background-image: url(../../assets/Rectangle\ 1107.svg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   border-radius: 10px;
+   width: 89%;
+
+    .banner-content{
+        // position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: 0;
+        align-items: center;
+        color: white;
+        gap: 86px;
+
+        
+        @media(max-width: 940px){
+            display: block;
+        }
+    }
+    .text-content{
+        h2{
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        p{
+            font-size: 14px;
+        }
+        width: 530px;
+
+        @media(max-width: 940px){
+            width: 100%
+        }
+    }
+    
+}
+
+.container-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 43px 49px;
+
+    @media(max-width: 1280px) {
+        grid-template-columns: repeat(2, 1fr); 
+        grid-gap: 43px 20px;
+    }
+
+    @media(max-width: 940px){
+        grid-template-columns: repeat(1, 1fr); 
+        grid-gap: 43px 20px;
+    }
+
+}
+.container-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 20px;
+    align-items: flex-start;
+    @media(max-width: 940px){
+        grid-template-columns: repeat(1, 1fr); 
+        grid-gap: 43px 20px;
+    }
+
+}
+
+// Global Styles
+.sidenav-container {
+    height: 100vh;
+}
+
+.page-heading {
+    font-size: 24px;
+    font-weight: 500;
+}
+.custom-width{
+    gap: 25px;
+}
+
+// Card Styles
+.bar-card,
+.mat-mdc-card {
+    width: $card-width;
+    box-shadow: none;
+    border-radius: 10px;
+    position: relative;
+    left: 10px;
+    @media(max-width: 1280px) {
+        width:750px;
+    }
+
+    &.abaly-card {
+        width: 280px;
+    }
+    &.analytic-card {
+        width: 395px;
+
+        @media(max-width: 1280px) {
+            width: 100%;
+        }
+    }
+
+    .card-header {
+        width: 100%;
+        .mat-mdc-card-subtitle {
+            font-family: 18px;
+            color: #707070;
+        }
+        mat-icon {
+            border-radius: 100px;
+            padding: 10px;
+
+            &.blue { background-color: rgba(#2786ff, 0.15); color: #2786ff; }
+            &.purple { background-color: rgba(#9327ff, 0.15); color: #8000ff; }
+            &.orange { background-color: rgba(#ff8227, 0.15); color: orange; }
+            &.green { background-color: rgba(#26a500, 0.15); color: green; }
+            &.yellow { background-color: rgba(#facc15, 0.15); color: #facc15; }
+            &.red { background-color: rgba(#fb2859, 0.15); color: #ff0038; }
+        }
+    }
+
+    .card-body {
+        margin-top: 10px;
+
+        .numBig {
+            font-size: 60px;
+            color: $primary-color;
+            font-weight: 500;
+        }
+
+        .heigh {
+            p {
+                color: #707070;
+                font-size: 14px;
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+            .high-contain {
+                font-size: 14px;
+                font-weight: 500;
+                display: flex;
+                justify-content: end;
+                gap: 10px;
+                span, mat-icon {
+                    color: #26a500;
+                }
+            }
+        }
+    }
+}
+
+.progress-chart {
+    position: relative;
+
+    .ruler {
+        display: flex;
+        align-items: flex-end;
+        height: 30px; 
+    }
+
+    .progress-item {
+        display: flex;
+        align-items: center;
+        margin-top: 7px; 
+    }
+
+    .progress-label {
+        width: 216px;
+        color: #707070;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .progress-line-container {
+        position: relative;
+        width: 100%;
+        top: -9px;
+    }
+
+    .progress-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 10px; 
+        background-color: #2196F3; 
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 940px) {
+    .mat-mdc-card.analytic-card,
+    .bar-card {
+        width: 314px;
+        margin-top: 1rem;
+    }
+
+    .custom-width {
+        width: 100%;
+        margin-right: 0;
+        display: block;
+    }
+
+    .card-header {
+        flex-wrap: wrap;
+        overflow-x: auto;
+    }
+}
+
+.text-svg{
+    white-space: nowrap;
+    width: 100%;
+    position: absolute;
+    top: 48%;
+    left: 0%;
+    right: 50%;
+    bottom: 50%;
+    line-height: 34px;
+    text-align: center;
+}
+.text-total{
+    font-size: 40px;
+    font-weight: 500;
+    
+
+    ~.svg-text{
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+.chart-container{
+    margin: 0 auto;
+}
+::ng-deep {
+    .customTab .mat-mdc-tab-label-container {
+        display: none !important;
+    }
+    .mat-mdc-tab .mdc-tab-indicator__content--underline {
+        border-color: #2196F3 !important;
+    }
+    .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+        font-weight: 500;
+        color: black !important;
+    }
+    .mat-mdc-tab .mdc-tab__text-label {
+        color: #707070;
+    }
+
+    ngx-charts-horizontal-bar-series rect {
+        height: 10px;
+    }
+}

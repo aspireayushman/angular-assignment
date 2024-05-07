@@ -1,0 +1,324 @@
+// Define variables
+$primary-color: #002A5F;
+$secondary-color: #2786FF;
+$background-light: #f0f0f0;
+$white: #ffffff;
+
+// Define mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+// Define styles using mixins and variables
+.site-container {
+  background-image: url('../../assets/Mask Group 1.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px 60px;
+
+  @media (max-width: 940px) {
+    padding: 10px 20px !important;
+  }
+}
+
+.main-section {
+  height: 100vh;
+  margin: 0 auto;
+
+  .site-header {
+    padding: 1rem 0;
+    .site-logo {
+      img {
+        width: 361px;
+        height: 74px;
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 40px;
+  }
+
+  .site-login-area {
+    @include flex-center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 940px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .login-form-area {
+    padding: 3rem;
+    border-radius: 10px;
+    background-color: $white;
+    width: 556px;
+
+    @media (max-width: 940px) {
+      padding: 10px !important;
+      margin-left: -10px;
+      width: 100%;
+    }
+  }
+
+  .icon {
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    background-image: url('../../assets/Group 4.png');
+    background-size: auto 44px;
+  }
+
+  .facebook {
+    background-position: 0 0;
+  }
+
+  .twitter {
+    background-position: -90px 0;
+  }
+
+  .instagram {
+    background-position: -180px 0;
+  }
+
+  .youtube {
+    background-position: -269px 0;
+  }
+
+  .copy-write {
+    font-size: 16px;
+    margin-top: 20px;
+    color: $white;
+  }
+}
+
+.form-area {
+  text-align: center;
+  position: relative;
+
+  .area-header {
+    h1 {
+      font-size: 32px;
+      color: #212121;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .forgot-pass {
+    text-align: right;
+    margin-top: -12px;
+    margin-bottom: 3rem;
+
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  }
+
+  .signIn-area {
+    font-size: 18px;
+    color: #707070;
+    margin-top: 10px;
+
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  }
+
+  .form-action {
+    margin-bottom: 150px;
+  }
+
+  .form-footer {
+    font-size: 18px;
+    position: absolute;
+    bottom: 0;
+    color: #707070;
+
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  }
+
+  .mat-mdc-form-field .mat-mdc-text-field-wrapper {
+    width: 462px;
+    height: 64px;
+    line-height: 34px;
+    margin: 0 auto;
+    background: #ecf4ff;
+
+    @media (max-width: 940px) {
+      width: 280px;
+    }
+  }
+
+  .mdc-notched-outline__trailing,
+  .mdc-notched-outline__leading {
+    border: none;
+  }
+
+  .mdc-button {
+    font-size: 18px;
+    width: 462px;
+    height: 64px;
+
+    @media (max-width: 940px) {
+      width: 150px;
+    }
+  }
+
+  .mat-mdc-form-field-icon-prefix mat-icon,
+  .mat-mdc-form-field-icon-suffix mat-icon {
+    color: $secondary-color;
+  }
+
+  .mat-mdc-raised-button:not(:disabled) {
+    background-color: $secondary-color;
+  }
+}
+
+::ng-deep {
+  .update-page {
+    color: $white;
+    font-size: 18px;
+    text-align: end;
+    margin-top: 1rem;
+  }
+
+  // Additional styles...
+}
+
+// Define variables
+$primary-color: #2786ff;
+$dark-color: #212121;
+$light-color: #707070;
+$link-color: #2786ff;
+$form-background: #ecf4ff;
+$form-width-desktop: 462px;
+$form-width-mobile: 280px;
+$form-padding: 3rem;
+
+// Define mixins
+@mixin link-styles {
+  color: $link-color;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+// Reusable styles for form fields
+@mixin form-field-styles {
+  width: $form-width-desktop;
+  height: 64px;
+  line-height: 34px;
+  margin: 0 auto;
+  background: $form-background;
+
+  @media (max-width: 940px) {
+    width: $form-width-mobile;
+  }
+}
+
+::ng-deep {
+  .update-page {
+    color: white;
+    font-size: 18px;
+    text-align: end;
+    margin-top: 1rem;
+  }
+
+  .form-area {
+    text-align: center;
+    position: relative;
+
+    form {
+      padding: $form-padding;
+    }
+
+    .area-header {
+      h1 {
+        font-size: 32px;
+        color: $dark-color;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+    .forgot-pass {
+      text-align: right;
+      margin-top: -12px;
+      margin-bottom: 3rem;
+
+      a {
+        @include link-styles;
+      }
+    }
+
+    .signIn-area {
+      font-size: 18px;
+      color: $light-color;
+      margin-top: 10px;
+
+      a {
+        @include link-styles;
+      }
+    }
+
+    .form-action {
+      margin-bottom: 150px;
+    }
+
+    .form-footer {
+      font-size: 18px;
+      position: absolute;
+      bottom: 0;
+      color: $light-color;
+
+      a {
+        @include link-styles;
+      }
+    }
+
+    .mat-mdc-form-field .mat-mdc-text-field-wrapper {
+      @include form-field-styles;
+    }
+
+    .mdc-notched-outline__trailing,
+    .mdc-notched-outline__leading {
+      border: none;
+    }
+
+    .mdc-button {
+      font-size: 18px;
+      width: $form-width-desktop;
+      height: 64px;
+
+      @media (max-width: 940px) {
+        width: $form-width-mobile;
+      }
+    }
+
+    .mat-mdc-form-field-icon-prefix mat-icon,
+    .mat-mdc-form-field-icon-suffix mat-icon {
+      color: $link-color;
+    }
+
+    .mat-mdc-raised-button:not(:disabled) {
+      background-color: $primary-color;
+    }
+  }
+}

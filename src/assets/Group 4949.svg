@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="234" height="50" viewBox="0 0 234 50">
+  <g id="Group_4949" data-name="Group 4949" transform="translate(-0.483)">
+    <g id="Rectangle_1010" data-name="Rectangle 1010" transform="translate(0.483)" fill="none" stroke="#ffd566" stroke-width="1">
+      <rect width="234" height="50" rx="4" stroke="none"/>
+      <rect x="0.5" y="0.5" width="233" height="49" rx="3.5" fill="none"/>
+    </g>
+    <g id="Group_5089" data-name="Group 5089" transform="translate(8.5 2.125)">
+      <text id="Send_Invite" data-name="Send Invite" transform="translate(131 30.567)" fill="#ffd566" font-size="20" font-family="Lato-Bold, Lato" font-weight="700"><tspan x="-49" y="0">Send Invite</tspan></text>
+    </g>
+    <g id="Icon_feather-send" data-name="Icon feather-send" transform="translate(34.474 12.692)">
+      <path id="Path_20153" data-name="Path 20153" d="M30.039,3,16.5,16.539" transform="translate(-5.423 -3)" fill="none" stroke="#facc15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_20154" data-name="Path 20154" d="M27.616,3,19,27.616,14.077,16.539,3,11.616Z" transform="translate(-3 -3)" fill="none" stroke="#facc15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

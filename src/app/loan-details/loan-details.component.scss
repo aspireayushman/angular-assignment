@@ -1,0 +1,147 @@
+// Variables
+$primary-color: #2786FF;
+$error-color: orangered;
+$rejected-color: red;
+$success-color: green;
+
+@mixin flex-box($gap: 40px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    gap: $gap;
+}
+
+@mixin table-setting {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    mat-icon {
+        color: $primary-color;
+    }
+}
+
+@mixin search-field {
+    width: 320px;
+    height: 40px;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $primary-color;
+}
+
+@mixin header-row {
+    background-color: #e9f3ff !important;
+    white-space: nowrap;
+}
+
+@mixin cell {
+    white-space: nowrap;
+    color: #707070;
+    a {
+        color: $primary-color;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .action-text {
+        color: $primary-color;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+@mixin column-actions {
+    text-align: end !important;
+}
+
+@mixin status-badge($border-color, $text-color: white) {
+    color: $border-color;
+    border: 1px solid $border-color;
+    border-radius: 60px;
+    padding: 5px 14px;
+    font-size: 12px;
+}
+
+.flex-box {
+    @include flex-box;
+}
+
+.table-setting {
+    @include table-setting;
+}
+.heading-box{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    .head-badge{
+        padding: 3px 20px;
+        border: 1px solid #2786FF;
+        border-radius: 60px;
+        color: black;
+        background-color: #2786FF1A;
+        p{
+            margin-bottom: 0;
+        }
+    }
+}
+.page-heading{
+    font-weight: 500;
+}
+
+::ng-deep {
+    .search {
+        &.mat-mdc-form-field:not(.mat-mdc-paginator-page-size-select) .mat-mdc-text-field-wrapper {
+            @include search-field;
+        }
+    }
+    .mat-mdc-header-row,
+    .mat-mdc-header-cell {
+        @include header-row;
+    }
+    .mat-mdc-cell {
+        @include cell;
+    }
+    .mat-column-actions {
+        @include column-actions;
+    }
+    .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background{
+        border: 0.5px solid #707070;
+        border-radius: 4px; 
+        background-color: white
+    }
+    .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background{
+        border-radius: 4px; 
+    }
+}
+
+.table-container {
+    overflow-x: auto;
+    max-width: 100%; 
+    white-space: nowrap;
+    height: 733px;
+}
+
+.pending {
+    @include status-badge($error-color);
+}
+
+.rejected {
+    @include status-badge($rejected-color);
+}
+
+.green {
+    @include status-badge($success-color);
+}
+
+@media (max-width: 767px) {
+    .flex-box {
+        flex-wrap: wrap;
+    }
+
+    .mat-mdc-table-sticky {
+        position: static !important;
+    }
+}

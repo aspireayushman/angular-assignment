@@ -1,0 +1,198 @@
+<h1 class="page-heading">Overview</h1>
+
+<!-- app.component.html -->
+<div class="container-2">
+    <!-- app.component.html -->
+
+    <div class="container-3">
+        <div class="row-container" *ngFor="let card of cards">
+          <mat-card class="abaly-card">
+            <mat-card-header>
+                <div fxLayout="row" class="card-header" fxLayoutAlign="space-between center">
+                  <div>
+                    <mat-card-subtitle>{{ card.title }}</mat-card-subtitle>
+                  </div>
+                  <div>
+                    <mat-icon class="{{ card.badgeColor}} ">{{ card.icon }}</mat-icon>
+                  </div>
+                </div>
+              </mat-card-header>
+            <mat-card-content>
+              <div fxLayout="row" class="card-body" fxLayoutAlign="space-between center">
+                <div class="numBig">
+                  {{ card.number }}
+                </div>
+                <div class="heigh">
+                  <div class="high-contain">
+                    <mat-icon>trending_up</mat-icon>
+                    <span>{{ card.trend }}</span>
+                  </div>
+                  <p>{{ card.trendText }}</p>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      
+  
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+        <mat-card class="analytic-card">
+          <mat-card-content>
+            <div fxLayout="row" class="card-header" fxLayoutAlign="space-between center">
+                <div>
+                  <mat-card-title>Title</mat-card-title>
+                </div>
+                <div>
+                  <mat-icon >more_horiz</mat-icon>
+                </div>
+              </div>
+              <div class="chart-container" style="width: 248px; height: 248px;">
+                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                 
+                  <ng-container *ngFor="let card of cards; let i=index">
+                    <circle
+                      [attr.cx]="150"
+                      [attr.cy]="150"
+                      [attr.r]="100"
+                      [attr.stroke-dasharray]="628"
+                      [attr.stroke-dashoffset]="628 - card.number * 6.28"
+                      [attr.stroke]="getStrokeColor(card.badgeColor)"
+                      stroke-width="30"
+                      fill="transparent"
+                      transform="rotate(-90 150 150)"
+                    ></circle>
+                  </ng-container>
+                </svg>
+                <div class="text-svg">
+                  <div class="text-total"> {{ total }} </div>
+                  <div class="svg-text"> Loan Count </div>
+                </div>
+              </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      
+</div>
+<br>
+
+<div class="banner-blue">
+    <div class="grid-box">
+      <div class="banner-content">
+          <img src="../../assets/Mask Group 91 (1).svg" alt="" class="">
+          <div class="text-content">
+            <h2>Want to add new applicant?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex</p>
+          </div>
+          <a href="#"><img src="../../assets/Group 4949.svg" alt=""></a>
+          <img src="../../assets/Invite-rafiki.svg" alt="" class="">
+      </div>
+    </div>
+</div>
+
+<br>
+
+<!-- app.component.html -->
+<div class="container-2">
+  <!-- app.component.html -->
+
+  <div>
+      <mat-card class="bar-card" style="padding-bottom: 26px;">
+        <mat-card-header>
+          <div fxLayout="row" class="card-header" fxLayoutAlign="space-between center">
+            <div mat-card-title>Loan Data</div>
+           <div class="flex-box">
+            <mat-tab-group mat-align-tabs="end" [selectedIndex]="selectedTabIndex" (selectedIndexChange)="onTabChange($event)">
+              <mat-tab label="Daily"></mat-tab>
+              <mat-tab label="Weekly"></mat-tab>
+              <mat-tab label="Monthly"></mat-tab>
+              <mat-tab label="Yearly"></mat-tab>
+            </mat-tab-group>
+            <mat-icon >more_horiz</mat-icon>
+           </div>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-tab-group [selectedIndex]="selectedTabIndex" class="customTab">
+            <mat-tab >
+              <ng-template matTabContent>
+              <!-- progress-chart.component.html -->
+            <div class="progress-chart">
+              <!-- Ruler -->
+              <div class="ruler">
+                <mat-divider *ngFor="let step of rulerSteps" [inset]="true"></mat-divider>
+              </div>
+              
+              <!-- Horizontal line chart -->
+              <div *ngFor="let card of cards" class="progress-item">
+                <div class="progress-label">{{ card.title }}</div>
+                <div class="progress-line-container">
+                  <div class="progress-line" [style.width.%]="calculateProgress(card.number)" [style.background-color]="getStrokeColor(card.badgeColor)"></div>
+                </div>
+                </div>
+              </div>
+
+              </ng-template>
+            </mat-tab>
+            <mat-tab label="Weekly">
+              <ng-template matTabContent>
+                <p>Weekly content goes here.</p>
+              </ng-template>
+            </mat-tab>
+            <mat-tab label="Monthly">
+              <ng-template matTabContent>
+                <p>Monthly content goes here.</p>
+              </ng-template>
+            </mat-tab>
+            <mat-tab label="Yearly">
+              <ng-template matTabContent>
+                <p>Yearly content goes here.</p>
+              </ng-template>
+            </mat-tab>
+          </mat-tab-group>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    
+
+    <div class="advertise-card">
+      <mat-card class="analytic-card" >
+        <mat-card-content>
+          <div class="card-header" fxLayoutAlign="space-between flex-start">
+              <div>
+                <mat-card-title>Advertisement</mat-card-title>
+              </div>
+              <div>
+                <mat-icon >more_horiz</mat-icon>
+              </div>
+            </div>
+            <div class="chart-container" style="width: 248px; height: 248px;">
+              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+               
+                <ng-container *ngFor="let card of cards; let i=index">
+                  <circle
+                    [attr.cx]="150"
+                    [attr.cy]="150"
+                    [attr.r]="100"
+                    [attr.stroke-dasharray]="628"
+                    [attr.stroke-dashoffset]="628 - card.number * 6.28"
+                    [attr.stroke]="getStrokeColor(card.badgeColor)"
+                    stroke-width="30"
+                    fill="transparent"
+                    transform="rotate(-90 150 150)"
+                  ></circle>
+                </ng-container>
+              </svg>
+              <div class="text-svg">
+                <div class="text-total"> {{ total }} </div>
+                <div class="svg-text"> Loan Count </div>
+              </div>
+            </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    
+</div>
+
+
+
