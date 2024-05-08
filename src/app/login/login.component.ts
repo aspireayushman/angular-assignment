@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   hide = true;
   loginForm: FormGroup; 
+  defaultEmail = 'xyz@gmail.com';
+  defaultPassword = '123456';
 
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
@@ -23,13 +25,16 @@ export class LoginComponent {
   }
   
   onSubmit() {
-    if (this.loginForm.valid) {
-      // Redirect to dashboard if form is valid
+    const enteredEmail = this.loginForm.get('email').value;
+    const enteredPassword = this.loginForm.get('password').value;
+
+    if (enteredEmail === this.defaultEmail && enteredPassword === this.defaultPassword) {
+      console.log('Logged in successfully');
       this.router.navigate(['/home/dashboard']); 
-      console.log('Form submitted successfully');
     } else {
-      // Handle invalid form
-      console.log('Form is invalid');
+      alert('Invalid credentials')
     }
   }
+
+  
 }

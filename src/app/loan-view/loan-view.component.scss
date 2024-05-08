@@ -2,7 +2,7 @@
 $sidebar-width: 339px;
 $sidebar-width-mobile: 200px;
 $grid-gap-desktop: 60px;
-$grid-gap-mobile: 20px;
+$grid-gap-mobile: 56px;
 $font-color: #333;
 $primary-color: #2786FF;
 $light-gray: #707070B2;
@@ -145,6 +145,7 @@ hr.rule{
 
     h4 {
       margin-bottom: 0;
+      margin-top: 0;
     }
 
     &.bg-approved {

@@ -33,7 +33,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { StylePaginatorDirective } from './loan-details/style-paginator.directive';
 import { LoanViewComponent } from './loan-view/loan-view.component';
-import { DynamicHeightDirective } from './login/dynamic-height';
 
 @NgModule({
   declarations: [
@@ -45,7 +44,6 @@ import { DynamicHeightDirective } from './login/dynamic-height';
     LoanDialogComponent,
     StylePaginatorDirective,
     LoanViewComponent,
-    DynamicHeightDirective
   ],
   imports: [
     BrowserModule,

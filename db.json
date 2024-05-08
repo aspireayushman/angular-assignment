@@ -83,11 +83,11 @@
       "loanType": "Business",
       "amount": 2000,
       "bdoName": "BDO 2",
-      "reviewerName": "",
-      "reviewerName1": "Santosh",
+      "reviewerName": "Santosh",
+      "reviewerName1": "Vijay Kumar",
       "reviewer": "Reviewer 3",
-      "loanStatus": "Submitted",
-      "loanCloser": "Vijay Kumar",
+      "loanStatus": "Yet To Be Boarded",
+      "loanCloser": "Santosh",
       "action": "Approve"
     },
     {

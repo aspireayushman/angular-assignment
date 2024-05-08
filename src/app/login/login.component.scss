@@ -4,6 +4,8 @@ $secondary-color: #2786FF;
 $background-light: #f0f0f0;
 $white: #ffffff;
 
+
+
 // Define mixins
 @mixin flex-center {
   display: flex;
@@ -11,13 +13,18 @@ $white: #ffffff;
   align-items: flex-end;
 }
 
-// Define styles using mixins and variables
 .site-container {
   background-image: url('../../assets/Mask Group 1.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 20px 60px;
+  height: 100vh;
+
+  @media (min-width:767px) and (max-width:1200px) {
+   height: 100vh;
+  }
+
 
   @media (max-width: 940px) {
     padding: 10px 20px !important;
@@ -25,11 +32,11 @@ $white: #ffffff;
 }
 
 .main-section {
-  height: 100vh;
+  
   margin: 0 auto;
 
   .site-header {
-    padding: 1rem 0;
+    // padding: 1rem 0;
     .site-logo {
       img {
         width: 361px;
@@ -50,11 +57,19 @@ $white: #ffffff;
 
     @media (max-width: 940px) {
       flex-direction: column-reverse;
+      .flex-box{
+        margin: 0 auto;
+      }
     }
+    @media (min-width:767px) and (max-width:1200px) {
+      align-items: center;
+     }
+    
+  
   }
 
   .login-form-area {
-    padding: 3rem;
+    padding: 1rem;
     border-radius: 10px;
     background-color: $white;
     width: 556px;
@@ -64,6 +79,10 @@ $white: #ffffff;
       margin-left: -10px;
       width: 100%;
     }
+    @media (min-width:767px) and (max-width:1200px) {
+      width: 98%;
+     }
+    
   }
 
   .icon {
@@ -105,6 +124,7 @@ $white: #ffffff;
     h1 {
       font-size: 32px;
       color: #212121;
+      font-weight: bold;
     }
 
     p {
@@ -115,7 +135,12 @@ $white: #ffffff;
   .forgot-pass {
     text-align: right;
     margin-top: -12px;
-    margin-bottom: 3rem;
+    margin-bottom: 25px;
+
+    @media(max-width: 767px){
+      margin-top: 1rem;
+      display: block;
+    }
 
     a {
       color: $secondary-color;
@@ -137,7 +162,7 @@ $white: #ffffff;
   }
 
   .form-action {
-    margin-bottom: 150px;
+    margin-bottom: 80px;
   }
 
   .form-footer {
@@ -145,6 +170,7 @@ $white: #ffffff;
     position: absolute;
     bottom: 0;
     color: #707070;
+    left: 0;
 
     a {
       color: $secondary-color;
@@ -153,15 +179,18 @@ $white: #ffffff;
     }
   }
 
-  .mat-mdc-form-field .mat-mdc-text-field-wrapper {
-    width: 462px;
-    height: 64px;
-    line-height: 34px;
-    margin: 0 auto;
-    background: #ecf4ff;
-
-    @media (max-width: 940px) {
-      width: 280px;
+  .mat-mdc-form-field {
+    margin-top: 1rem;
+    .mat-mdc-text-field-wrapper {
+      width: 462px;
+      height: 64px;
+      line-height: 34px;
+      margin: 0 auto;
+      background: #ecf4ff;
+  
+      @media (max-width: 940px) {
+        width: 243px;
+      }
     }
   }
 
@@ -176,7 +205,7 @@ $white: #ffffff;
     height: 64px;
 
     @media (max-width: 940px) {
-      width: 150px;
+      width: 100%;
     }
   }
 
@@ -196,6 +225,10 @@ $white: #ffffff;
     font-size: 18px;
     text-align: end;
     margin-top: 1rem;
+
+    @media (max-width: 767px) {
+      text-align: center !important;
+    }
   }
 
   // Additional styles...
@@ -208,7 +241,7 @@ $light-color: #707070;
 $link-color: #2786ff;
 $form-background: #ecf4ff;
 $form-width-desktop: 462px;
-$form-width-mobile: 280px;
+$form-width-mobile: 300px;
 $form-padding: 3rem;
 
 // Define mixins
@@ -229,6 +262,9 @@ $form-padding: 3rem;
   @media (max-width: 940px) {
     width: $form-width-mobile;
   }
+  @media (min-width:767px) and (max-width:1200px) {
+    width: 717px;
+   }
 }
 
 ::ng-deep {
@@ -237,7 +273,11 @@ $form-padding: 3rem;
     font-size: 18px;
     text-align: end;
     margin-top: 1rem;
+    @media (min-width:767px) and (max-width:1200px) {
+      text-align: center !important;
+     }
   }
+ 
 
   .form-area {
     text-align: center;
@@ -245,6 +285,10 @@ $form-padding: 3rem;
 
     form {
       padding: $form-padding;
+      
+      @media (min-width:767px) {
+        padding: 1rem;
+      }
     }
 
     .area-header {
@@ -321,4 +365,17 @@ $form-padding: 3rem;
       background-color: $primary-color;
     }
   }
+}
+
+
+
+
+@media(max-width: 767px) {
+  .form-container{
+    width: 100%;
+  }
+  .main-section .site-header .site-logo img{
+    width: 100%;
+  }
+  
 }

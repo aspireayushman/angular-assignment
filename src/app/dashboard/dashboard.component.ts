@@ -83,7 +83,7 @@ export class DashboardComponent {
         return 'black'; 
     }
   }
-
+  
   getLineWidth(badgeColor: string): number {
     switch (badgeColor) {
       case 'blue':
@@ -99,7 +99,7 @@ export class DashboardComponent {
       case 'red':
         return 5;
       default:
-        return 1; // Default thickness
+        return 1; 
     }
   }
   
@@ -108,9 +108,9 @@ export class DashboardComponent {
   constructor() {
     this.total = this.cards.reduce((acc, curr) => acc + curr.number, 0);
   }
-
+  
   calculateDashArray(number: number): string {
-    const gapLength = 50;
+    const gapLength = 10;
     const blockLength = (628 - (this.cards.length * gapLength)) / this.total;
     return `${number * blockLength - gapLength} ${gapLength}`;
   }

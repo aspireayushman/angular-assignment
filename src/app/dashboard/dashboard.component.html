@@ -1,9 +1,6 @@
 <h1 class="page-heading">Overview</h1>
 
-<!-- app.component.html -->
 <div class="container-2">
-    <!-- app.component.html -->
-
     <div class="container-3">
         <div class="row-container" *ngFor="let card of cards">
           <mat-card class="abaly-card">
@@ -92,9 +89,7 @@
 
 <br>
 
-<!-- app.component.html -->
 <div class="container-2">
-  <!-- app.component.html -->
 
   <div>
       <mat-card class="bar-card" style="padding-bottom: 26px;">
@@ -116,14 +111,11 @@
           <mat-tab-group [selectedIndex]="selectedTabIndex" class="customTab">
             <mat-tab >
               <ng-template matTabContent>
-              <!-- progress-chart.component.html -->
             <div class="progress-chart">
-              <!-- Ruler -->
-              <div class="ruler">
+              <!-- <div class="ruler">
                 <mat-divider *ngFor="let step of rulerSteps" [inset]="true"></mat-divider>
               </div>
-              
-              <!-- Horizontal line chart -->
+               -->
               <div *ngFor="let card of cards" class="progress-item">
                 <div class="progress-label">{{ card.title }}</div>
                 <div class="progress-line-container">

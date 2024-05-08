@@ -1,9 +1,12 @@
 
   .sidenav-container {
     background-color: #002A5F;
-    height: 100vh;
+    height: auto;
  position: relative;
 
+  }
+  .center h2{
+    font-size: 24px;
   }
   .menu-contrl{
     padding: 12px 5px;
@@ -83,9 +86,8 @@
                 gap: 12px;
                 align-items: center;
                 font-size: 16px;
-                font-weight: 100;
                 margin-left: 20px;
-
+                font-weight: normal;
                
                
             }
@@ -118,7 +120,7 @@
   }
   
   .mat-drawer-content {
-    background-color: #F2F4F8; /* Light gray */
+    background-color: #F2F4F8; 
     margin-left: 300px !important;
 
     @media(max-width: 940px){
@@ -158,6 +160,14 @@
   }
   
   ::ng-deep{
+    .mat-mdc-raised-button:not(:disabled) {
+      background-color: #2786FF !important;
+      width: 90%;
+      margin: 0 auto;
+      position: absolute;
+      right: 13px;
+      bottom: 80px;
+    }
     .mat-mdc-form-field:not(.mat-mdc-paginator-page-size-select) .mat-mdc-text-field-wrapper{
       width: 441px;
       height: 40px;
@@ -197,6 +207,7 @@
 }
 .blue-text{
   color: #2786FF;
+  font-size: 27px;
 }
 .toolbar-menu {
   list-style: none;
@@ -215,7 +226,7 @@
   width: 100px;
   list-style: none;
   top: 100%;
-  left: 0;
+  right: 0;
   background-color: #fff;
   border: 1px solid #ccc;
   padding: 10px;
@@ -225,11 +236,12 @@
 .toolbar-menu li a {
   text-decoration: none;
   color: #707070;
-  font-weight: 200;
+  font-weight: normal;
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 18px;
+
 }
 
 .toolbar-menu li .profile {

@@ -17,7 +17,6 @@
       <ul>
         <li routerLinkActive="active"><a routerLink="/home/dashboard" > <mat-icon>home_outline</mat-icon>  Dashboard</a></li>
         <li routerLinkActive="active"><a routerLink="/home/loan" ><mat-icon></mat-icon>Loan</a></li>
-        <!-- Add more report links as needed -->
       </ul>
     </div>
 
@@ -43,7 +42,6 @@
       <ul>
         <li><a routerLink="/users/list"><mat-icon></mat-icon>User List</a></li>
         <li><a routerLink="/users/roles"><mat-icon></mat-icon>Roles & Permissions</a></li>
-        <!-- Add more user management links as needed -->
       </ul>
     </div>
 
@@ -56,10 +54,13 @@
       <ul>
         <li><a routerLink="/settings/profile"><mat-icon></mat-icon>Profile Settings</a></li>
         <li><a routerLink="/settings/preferences"><mat-icon></mat-icon>Preferences</a></li>
-        <!-- Add more settings links as needed -->
       </ul>
     </div>
+    
 
+    <div class="logout-btn" *ngIf="!smallMenu">
+      <button mat-raised-button color="primary" [routerLink]="['/login']" type="submit"><mat-icon>logout</mat-icon> Logout</button>
+    </div>
     <div class="menu-contrl" (click)="toggleSmallMenu()" >
       <mat-icon mat-icon-button >
         {{ smallMenu ? 'chevron_right' : 'chevron_left' }}
@@ -69,11 +70,9 @@
 
   <!-- Main Content -->
   <mat-sidenav-content >
-      <!-- Header -->
       <mat-toolbar color="primary" class="header">
       
         <div class="row-flex">
-            <!-- Toggle Button -->
            
             <div class="col mobi-show dektop-hide" >
               <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"  (click)="toggleSmallMenu()">
@@ -93,7 +92,7 @@
             <ul class="toolbar-menu">
               <li class="mobi-hide">
                   <a  (click)="toggleDropdown('bizLandPro')">
-                      <mat-icon class="orange-text">star</mat-icon> BizLand Pro   <mat-icon class="blue-text">expand_more</mat-icon>
+                      <mat-icon class="orange-text">star</mat-icon> BizLend Pro   <mat-icon class="blue-text">expand_more</mat-icon>
                       <ul class="dropdown-menu" *ngIf="isDropdownOpen['bizLandPro']">
                           <li><a href="#">Item 1</a></li>
                           <li><a href="#">Item 2</a></li>
@@ -116,14 +115,11 @@
                   </a>
               </li>
           </ul>
-          
-          
           </div>
         </div>
         
       </mat-toolbar>
       
-      <!-- Tab Content -->
       <div fxLayout="column" fxLayoutAlign="start stretch" class="tab-content">
         <router-outlet></router-outlet>
       </div>

@@ -24,7 +24,11 @@ $card-width: 940px;
    background-repeat: no-repeat;
    background-size: cover;
    border-radius: 10px;
-   width: 89%;
+   width: 100%;
+
+   @media(min-width: 1400px){
+        width: 100%;
+    }   
 
     .banner-content{
         // position: absolute;
@@ -33,8 +37,8 @@ $card-width: 940px;
         top: 0;
         align-items: center;
         color: white;
-        gap: 86px;
-
+        // gap: 86px;
+        gap: 0px;
         
         @media(max-width: 940px){
             display: block;
@@ -60,7 +64,7 @@ $card-width: 940px;
 .container-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    grid-gap: 43px 49px;
+    grid-gap: 43px 23px;
 
     @media(max-width: 1280px) {
         grid-template-columns: repeat(2, 1fr); 
@@ -70,6 +74,10 @@ $card-width: 940px;
     @media(max-width: 940px){
         grid-template-columns: repeat(1, 1fr); 
         grid-gap: 43px 20px;
+    }
+
+    @media(min-width: 1320px) and (max-width: 1600px) {
+        grid-gap: 43px 10px;
     }
 
 }
@@ -107,11 +115,25 @@ $card-width: 940px;
     position: relative;
     left: 10px;
     @media(max-width: 1280px) {
-        width:750px;
+        width:581px;
+    }
+    @media(min-width: 1320px) and (max-width: 1600px) {
+        width:100% ;
+        .mat-mdc-card-title{
+            width: 240px;
+        }
+        .progress-chart {
+            margin-top: 2rem;
+        }
     }
 
     &.abaly-card {
         width: 280px;
+
+        @media(min-width: 1320px) and (max-width: 1600px) {
+            width:238px;
+        }
+    
     }
     &.analytic-card {
         width: 395px;
