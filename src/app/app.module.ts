@@ -33,6 +33,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { StylePaginatorDirective } from './loan-details/style-paginator.directive';
 import { LoanViewComponent } from './loan-view/loan-view.component';
+import { AddLoansComponent } from './add-loans/add-loans.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { LoanViewComponent } from './loan-view/loan-view.component';
     LoanDialogComponent,
     StylePaginatorDirective,
     LoanViewComponent,
+    AddLoansComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,8 @@ import { LoanViewComponent } from './loan-view/loan-view.component';
     HttpClientModule,
     FormsModule,
     MatPaginatorModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule
   ],
   providers: [LoanService],
   bootstrap: [AppComponent] 

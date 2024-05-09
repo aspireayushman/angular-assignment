@@ -11,6 +11,6 @@ export interface Loan {
   reviewerName1: string;
   reviewer?: string;
   loanCloser?: string;
-  loanStatus: 'Yet To Be Boarded' | 'Submitted' | 'Rejected';
+  loanStatus?: 'Yet To Be Boarded' | 'Submitted' | 'Rejected';
   action?: string;
 }

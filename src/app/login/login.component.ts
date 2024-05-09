@@ -10,8 +10,12 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   hide = true;
   loginForm: FormGroup; 
-  defaultEmail = 'xyz@gmail.com';
-  defaultPassword = '123456';
+  isAdmin: boolean; 
+
+  users = [
+    { email: 'user@gmail.com', password: 'user123', role: 'user' },
+    { email: 'admin@gmail.com', password: 'admin123', role: 'admin' }
+  ];
 
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
@@ -28,13 +32,18 @@ export class LoginComponent {
     const enteredEmail = this.loginForm.get('email').value;
     const enteredPassword = this.loginForm.get('password').value;
 
-    if (enteredEmail === this.defaultEmail && enteredPassword === this.defaultPassword) {
-      console.log('Logged in successfully');
-      this.router.navigate(['/home/dashboard']); 
-    } else {
-      alert('Invalid credentials')
-    }
-  }
+    const user = this.users.find(u => u.email === enteredEmail && u.password === enteredPassword);
 
-  
+    if (user) {
+      console.log('Logged in successfully as ' + user.role);
+      this.isAdmin = user.role === 'admin'; 
+      if (this.isAdmin) {
+        this.router.navigate(['/home/dashboard']); 
+      } else {
+        this.router.navigate(['/home/dashboard']); 
+      }
+    } else {
+      alert('Invalid credentials');
+    }
+  } 
 }

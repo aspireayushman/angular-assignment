@@ -9,10 +9,13 @@
         <input matInput type="search" placeholder="Search..." [(ngModel)]="searchTerm" (input)="applyFilter()">
       </mat-form-field>
       
-      
+        <a  class="table-setting" (click)="openAddLoanDialog()">Add New Loan</a>
         <a class="table-setting"><mat-icon>filter_list</mat-icon> Filter</a>
         <a class="table-setting"> View <mat-icon>expand_more</mat-icon></a>
         <a class="table-setting"><mat-icon>download</mat-icon> Download </a>
+     
+     
+
     </div>
   </div>
   <div class="table-container">
