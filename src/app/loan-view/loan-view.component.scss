@@ -1,18 +1,4 @@
-// Variables
-$sidebar-width: 339px;
-$sidebar-width-mobile: 200px;
-$grid-gap-desktop: 60px;
-$grid-gap-mobile: 56px;
-$font-color: #333;
-$primary-color: #2786FF;
-$light-gray: #707070B2;
-$bg-color-approved: #26A50034;
-$bg-color-submit: #0070FF33;
-$bg-color-pending: #70707033;
-$alert-bg-warning: #FF00001A;
-$alert-bg-alert: #FFB10034;
-$alert-border-color: #FF8900A3;
-
+@import '../../assets/theme/style.scss';
 // Mixins
 @mixin flex-center {
   display: flex;
@@ -94,6 +80,7 @@ hr.rule{
   h2 {
     margin-bottom: 0;
     font-size: 24px;
+    font-weight: 700;
   }
 }
 
@@ -177,13 +164,15 @@ hr.rule{
   display: flex;
   gap: 15px;
   align-items: center;
+  font-size: 20px;
+  font-weight: bold;
 }
 .head-badge{
   padding: 3px 20px;
-  border: 1px solid #2786FF;
+  border: 1px solid $primary-blue;
   border-radius: 60px;
   color: black;
-  margin-bottom: 0;
+  margin: 0 0;
   background-color: #2786FF1A;
 }
 .expandableMenu ul li a {
@@ -193,7 +182,7 @@ hr.rule{
   padding: 10px;
   justify-content: flex-start;
   text-decoration: none;
-  color: #707070B2;
+  color: $light-gray;
   font-size: 18px;
 
   .mat-icon {
@@ -201,8 +190,12 @@ hr.rule{
   }
 
   &.active {
-    color: #212121;
+    color: $dark-color;
   }
+}
+.page-heading{
+  font-weight: bold;
+  font-size: 24px;
 }
 
 .mdc-button {
@@ -213,7 +206,7 @@ hr.rule{
 
   &:not(.mat-mdc-outlined-button) {
     background-color: $primary-color;
-    color: white;
+    color: $white;
   }
 }
 
@@ -221,23 +214,26 @@ hr.rule{
   display: flex;
   gap: 20px;
   margin-top: 60px;
-  padding: 0 60px;
 
   .alert-1 {
-    background-color: $alert-bg-warning;
+    background-color: $alert-bg-alert;
     padding: 10px;
     border: 1px solid $alert-border-color;
     border-radius: 10px;
 
     p, h5 {
-      margin-bottom: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+    h5{
+      font-weight: bold;
     }
   }
 
   .warn-box {
-    background-color: $alert-bg-alert;
+    background-color:  $alert-bg-warning;
     border-radius: 10px;
-    color: red;
+    color: $rejected-color;
     padding: 10px;
 
     p {
@@ -253,17 +249,22 @@ hr.rule{
 .toggle-icon {
   margin-top: -7px;
 }
-
+h2{
+  margin: 0;
+}
 ::ng-deep {
     .mat-mdc-tab .mdc-tab-indicator__content--underline {
-        border-color: #2196F3 !important;
+        border-color: $custom-primary-blue !important;
     }
+    .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label{
+          color: $custom-primary-blue!important;
+        }
+
     .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
         font-weight: 500;
-        color: black !important;
     }
     .mat-mdc-tab .mdc-tab__text-label {
-        color: #707070;
+        color: $light-color;
     }
   .mat-expansion-panel {
     margin-top: 1rem !important;
@@ -271,14 +272,14 @@ hr.rule{
 
   .checkb-area {
     position: relative;
-    left: 44px;
+    left: -9px;
     top: 26px;
   }
 
   .flex-container {
     margin-top: 1rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     @media (max-width: 1280px) {
       flex-wrap: wrap;
@@ -288,7 +289,7 @@ hr.rule{
   .flex-container label {
     margin-bottom: 8px;
     display: block;
-    color: #707070B2;
+    color: $light-gray;
   }
 
   .flex-container input {
@@ -296,7 +297,7 @@ hr.rule{
     width: 208px;
     border-radius: 4px;
     padding: 9px 11px;
-    border: 1px solid black;
+    border: 1px solid $black;
 
     &:focus {
       outline: none;

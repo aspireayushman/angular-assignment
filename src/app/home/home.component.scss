@@ -1,8 +1,9 @@
-
+@import '../../assets/theme/style.scss';
+  
   .sidenav-container {
-    background-color: #002A5F;
-    height: auto;
- position: relative;
+    background-color: $darkb-color;
+    height: $viewport-width;
+    position: relative;
 
   }
   .center h2{
@@ -13,7 +14,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: white;
+    background: $white;
     text-align: center;
     margin-left: -10px;
     cursor: pointer;
@@ -37,17 +38,16 @@
   }
 
   .page-heading{
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 24px;
 }
  
   .mat-sidenav {
     width: 300px;
-    background-color: #002A5F;
-    color: white;
-
-    // @media(max-width: 650px){
-    //   display: none;
-    // }
+    background-color: $darkb-color;
+    color: $white;
+    height: $viewport-width;
+    overflow: auto;
 
     &.small-sidenav{
       width: 100px;
@@ -66,12 +66,12 @@
             margin-right: -15px;
 
             &.active {
-                background-color: white;
+                background-color: $white;
                 border-radius: 4px 0px 0px 4px;
                 padding: 8px 10px;
                 a{
                     font-weight: 500;
-                    color: #2786FF;
+                    color: $primary-color;
 
                     .mat-icon{
                         margin-left: -10px;
@@ -80,7 +80,7 @@
             }
            
             a {
-                color: white;
+                color: $white;
                 text-decoration: none;
                 display: flex;
                 gap: 12px;
@@ -115,12 +115,12 @@
   .separator {
     margin: 10px 0;
     border: none;
-    border-top: 2px solid #EAF3FF;
+    border-top: 2px solid $leam-color;
   }
   }
   
   .mat-drawer-content {
-    background-color: #F2F4F8; 
+    background-color: $white-leam-color; 
     margin-left: 300px !important;
 
     @media(max-width: 940px){
@@ -136,10 +136,15 @@
     padding-bottom: 10px;
     padding-left: 1rem;
     width: 90%;
+
+    @media(min-width: 940px) {
+      padding-top: 0 !important; 
+      padding-bottom: 0 !important;
+    }
   }
   .mat-toolbar{
     height: 80px;
-    background-color: #FFFFFF;
+    background-color: $white;
   }
   .mat-toolbar{
     color: black;
@@ -156,16 +161,16 @@
     position: absolute;
     bottom: 16px;
     left: 16px;
-    color: white;
+    color: $white;
   }
   
   ::ng-deep{
     .mat-mdc-raised-button:not(:disabled) {
-      background-color: #2786FF !important;
+      background-color: $primary-blue !important;
       width: 90%;
       margin: 0 auto;
       position: absolute;
-      right: 13px;
+      right: 18px;
       bottom: 80px;
     }
     .mat-mdc-form-field:not(.mat-mdc-paginator-page-size-select) .mat-mdc-text-field-wrapper{
@@ -173,8 +178,9 @@
       height: 40px;
      
       margin: 0 auto;
-      background: #ecf4ff;
-      border: 1px solid #2786FF;
+      background: $form-background;
+      border: 1px solid $primary-blue;
+      border-radius: 5px;
 
       @media(max-width: 1280px){
         width:80%;
@@ -184,8 +190,11 @@
         border: none ;
       }
   }
+  .search-Icon{
+    margin-left: 11px;
+  }
   .mat-mdc-form-field-icon-prefix mat-icon, .mat-mdc-form-field-icon-suffix mat-icon{
-      color: #2786ff;
+      color: $primary-blue;
   }
   .mat-mdc-form-field-subscript-wrapper{
     display: none;
@@ -203,10 +212,10 @@
   color: orange;
 }
 .yellow-text{
-  color: #FACC15;
+  color: $yelow-color;
 }
 .blue-text{
-  color: #2786FF;
+  color: $primary-blue;
   font-size: 27px;
 }
 .toolbar-menu {
@@ -223,24 +232,33 @@
 
 .dropdown-menu {
   position: absolute;
-  width: 100px;
+  width: 150px;
   list-style: none;
   top: 100%;
   right: 0;
-  background-color: #fff;
+  background-color: $white;
   border: 1px solid #ccc;
   padding: 10px;
   z-index: 1000;
+
+  li{
+    border-bottom: 1px solid $light-color;
+    padding: 10px 0;
+    &:last-child{
+      border-bottom: none;
+    }
+  }
 }
 
 .toolbar-menu li a {
   text-decoration: none;
-  color: #707070;
+  color: $light-color;
   font-weight: normal;
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 18px;
+  
 
 }
 
@@ -251,8 +269,8 @@
 }
 
 .toolbar-menu li .profile img {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   object-fit: cover;
   border-radius: 100%;
 }

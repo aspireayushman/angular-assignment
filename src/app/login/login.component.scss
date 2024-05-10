@@ -1,34 +1,33 @@
-// Define variables
-$primary-color: #002A5F;
-$secondary-color: #2786FF;
-$background-light: #f0f0f0;
-$white: #ffffff;
-
-
+@import '../../assets/theme/style.scss';
 
 // Define mixins
 @mixin flex-center {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  
 }
-
+.main-section{
+  margin-top: -21px  !important;
+}
 .site-container {
   background-image: url('../../assets/Mask Group 1.png');
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
-  padding: 20px 60px;
+  padding: 20px 60px 0  60px ;
   height: 100vh;
-
-  @media (min-width:767px) and (max-width:1200px) {
-   height: 100vh;
+ 
+  @media (min-width: 576px) { 
+    height: 100vh;
+  }
+  @media (min-width: 992px) {
+    height: 100vh;
   }
 
-
-  @media (max-width: 940px) {
-    padding: 10px 20px !important;
-  }
+  @media (min-width: 1200px) { 
+    height: 100vh;
+   }
 }
 
 .main-section {
@@ -36,7 +35,6 @@ $white: #ffffff;
   margin: 0 auto;
 
   .site-header {
-    // padding: 1rem 0;
     .site-logo {
       img {
         width: 361px;
@@ -54,6 +52,7 @@ $white: #ffffff;
     @include flex-center;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-end;
 
     @media (max-width: 940px) {
       flex-direction: column-reverse;
@@ -62,10 +61,9 @@ $white: #ffffff;
       }
     }
     @media (min-width:767px) and (max-width:1200px) {
-      align-items: center;
+      align-items: flex-end;
      }
     
-  
   }
 
   .login-form-area {
@@ -73,6 +71,11 @@ $white: #ffffff;
     border-radius: 10px;
     background-color: $white;
     width: 556px;
+    margin-top: -46px;
+
+    @media (min-width: 576px) { 
+      margin-top: 1rem;
+    }
 
     @media (max-width: 940px) {
       padding: 10px !important;
@@ -123,12 +126,14 @@ $white: #ffffff;
   .area-header {
     h1 {
       font-size: 32px;
-      color: #212121;
+      color: $dark-color;
       font-weight: bold;
     }
 
     p {
       font-size: 18px;
+      font-weight: normal;
+      line-height: 25px;
     }
   }
 
@@ -136,6 +141,7 @@ $white: #ffffff;
     text-align: right;
     margin-top: -12px;
     margin-bottom: 25px;
+    padding: 0 30px;
 
     @media(max-width: 767px){
       margin-top: 1rem;
@@ -143,7 +149,7 @@ $white: #ffffff;
     }
 
     a {
-      color: $secondary-color;
+      color: $primary-color;
       text-decoration: none;
       font-size: 18px;
     }
@@ -151,11 +157,11 @@ $white: #ffffff;
 
   .signIn-area {
     font-size: 18px;
-    color: #707070;
+    color: $light-color;
     margin-top: 10px;
 
     a {
-      color: $secondary-color;
+      color: $primary-color;
       text-decoration: none;
       font-size: 18px;
     }
@@ -173,7 +179,7 @@ $white: #ffffff;
     left: 0;
 
     a {
-      color: $secondary-color;
+      color: $primary-color;
       text-decoration: none;
       font-size: 18px;
     }
@@ -186,7 +192,7 @@ $white: #ffffff;
       height: 64px;
       line-height: 34px;
       margin: 0 auto;
-      background: #ecf4ff;
+      background: $form-background;
   
       @media (max-width: 940px) {
         width: 243px;
@@ -211,11 +217,11 @@ $white: #ffffff;
 
   .mat-mdc-form-field-icon-prefix mat-icon,
   .mat-mdc-form-field-icon-suffix mat-icon {
-    color: $secondary-color;
+    color: $primary-color;
   }
 
   .mat-mdc-raised-button:not(:disabled) {
-    background-color: $secondary-color;
+    background-color: $primary-color;
   }
 }
 
@@ -225,33 +231,29 @@ $white: #ffffff;
     font-size: 18px;
     text-align: end;
     margin-top: 1rem;
+    p{
+      margin-bottom: 0;
+    }
 
     @media (max-width: 767px) {
       text-align: center !important;
     }
   }
 
-  // Additional styles...
+
 }
 
-// Define variables
-$primary-color: #2786ff;
-$dark-color: #212121;
-$light-color: #707070;
-$link-color: #2786ff;
-$form-background: #ecf4ff;
-$form-width-desktop: 462px;
-$form-width-mobile: 300px;
-$form-padding: 3rem;
 
-// Define mixins
+
+
+
 @mixin link-styles {
   color: $link-color;
   text-decoration: none;
   font-size: 18px;
 }
 
-// Reusable styles for form fields
+
 @mixin form-field-styles {
   width: $form-width-desktop;
   height: 64px;
@@ -269,7 +271,7 @@ $form-padding: 3rem;
 
 ::ng-deep {
   .update-page {
-    color: white;
+    color: $white;
     font-size: 18px;
     text-align: end;
     margin-top: 1rem;

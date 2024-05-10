@@ -1,6 +1,6 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container"  >
   <!-- Side Navigation -->
-  <mat-sidenav #sidenav mode="side" opened class="full-width full-height " [ngClass]="{'small-sidenav': smallMenu}">
+  <mat-sidenav #sidenav mode="side" opened class="full-width full-height " [ngClass]="{'small-sidenav': smallMenu}" >
     <!-- Top Logo -->
     <div class="sidenav-logo">
       <img src="../../assets/Image 2.png" alt="Logo" *ngIf="!smallMenu">
@@ -71,9 +71,7 @@
   <!-- Main Content -->
   <mat-sidenav-content >
       <mat-toolbar color="primary" class="header">
-      
         <div class="row-flex">
-           
             <div class="col mobi-show dektop-hide" >
               <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"  (click)="toggleSmallMenu()">
                 <mat-icon>menu</mat-icon>
@@ -81,7 +79,7 @@
             </div>
           <div class="col mobi-hide" >
             <mat-form-field appearance="outline">
-              <mat-icon matPrefix>search</mat-icon>
+              <img matPrefix class="search-Icon" src="../../assets/Icon feather-search.svg" alt="">
               <input matInput type="search" placeholder="Search for Loan No. Type and more...">
             </mat-form-field>
           </div>
@@ -91,7 +89,7 @@
           <div class="col ">
             <ul class="toolbar-menu">
               <li class="mobi-hide">
-                  <a  (click)="toggleDropdown('bizLandPro')">
+                  <a clickOutside  (click)="toggleDropdown('bizLandPro')">
                       <mat-icon class="orange-text">star</mat-icon> BizLend Pro   <mat-icon class="blue-text">expand_more</mat-icon>
                       <ul class="dropdown-menu" *ngIf="isDropdownOpen['bizLandPro']">
                           <li><a href="#">Item 1</a></li>
@@ -109,7 +107,7 @@
                           <mat-icon class="blue-text mobi-hide">expand_more</mat-icon>
                       </div>
                       <ul class="dropdown-menu " *ngIf="isDropdownOpen['profile']" >
-                          <li><a href="#">Profile</a></li>
+                          <li><a href="#"><strong>Jhon Doe</strong></a></li>
                           <li><a href="#">Logout</a></li>
                       </ul>
                   </a>

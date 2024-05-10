@@ -1,8 +1,5 @@
 // Variables
-$primary-color: #2786FF;
-$error-color: orangered;
-$success-color: green ;
-$card-width: 940px;
+@import '../../assets/theme/style.scss';
 
 // Mixins
 @mixin flex-box($gap: 10px) {
@@ -31,13 +28,11 @@ $card-width: 940px;
     }   
 
     .banner-content{
-        // position: absolute;
         display: flex;
         justify-content: space-between;
         top: 0;
         align-items: center;
-        color: white;
-        // gap: 86px;
+        color: $white;
         gap: 0px;
         
         @media(max-width: 940px){
@@ -80,6 +75,9 @@ $card-width: 940px;
         grid-gap: 43px 10px;
     }
 
+}
+.c-m{
+    margin-top: 2rem;
 }
 .container-2 {
     display: grid;
@@ -147,18 +145,18 @@ $card-width: 940px;
         width: 100%;
         .mat-mdc-card-subtitle {
             font-family: 18px;
-            color: #707070;
+            color: $light-color;
         }
         mat-icon {
             border-radius: 100px;
             padding: 10px;
 
-            &.blue { background-color: rgba(#2786ff, 0.15); color: #2786ff; }
-            &.purple { background-color: rgba(#9327ff, 0.15); color: #8000ff; }
-            &.orange { background-color: rgba(#ff8227, 0.15); color: orange; }
-            &.green { background-color: rgba(#26a500, 0.15); color: green; }
-            &.yellow { background-color: rgba(#facc15, 0.15); color: #facc15; }
-            &.red { background-color: rgba(#fb2859, 0.15); color: #ff0038; }
+            &.blue { background-color: rgba($primary-blue, 0.15); color: $primary-blue; }
+            &.purple { background-color: rgba($secondary-purple, 0.15); color: $secondary-purple; }
+            &.orange { background-color: rgba($accent-orange, 0.15); color: $accent-orange; }
+            &.green { background-color: rgba($success-green, 0.15); color: $success-green; }
+            &.yellow { background-color: rgba($warning-yellow, 0.15); color: $warning-yellow; }
+            &.red { background-color: rgba($error-red, 0.15); color: $error-red; }
         }
     }
 
@@ -173,7 +171,7 @@ $card-width: 940px;
 
         .heigh {
             p {
-                color: #707070;
+                color: $light-color;
                 font-size: 14px;
                 margin-top: 5px;
                 margin-bottom: 0;
@@ -185,7 +183,7 @@ $card-width: 940px;
                 justify-content: end;
                 gap: 10px;
                 span, mat-icon {
-                    color: #26a500;
+                    color: $success-green;
                 }
             }
         }
@@ -209,7 +207,7 @@ $card-width: 940px;
 
     .progress-label {
         width: 216px;
-        color: #707070;
+        color: $light-color;
         font-size: 14px;
         margin-bottom: 5px;
     }
@@ -225,7 +223,7 @@ $card-width: 940px;
         top: 0;
         left: 0;
         height: 10px; 
-        background-color: #2196F3; 
+        background-color: $custom-primary-blue; 
         border-radius: 4px;
     }
 }
@@ -248,9 +246,13 @@ $card-width: 940px;
         overflow-x: auto;
     }
 }
-
+.page-heading{
+    font-weight: bold;
+    font-size: 24px;
+}
+ 
 .text-svg{
-    white-space: nowrap;
+    $white-space: nowrap;
     width: 100%;
     position: absolute;
     top: 48%;
@@ -262,33 +264,196 @@ $card-width: 940px;
 }
 .text-total{
     font-size: 40px;
-    font-weight: 500;
+    font-weight: 800;
     
 
     ~.svg-text{
         font-size: 18px;
-        font-weight: 500;
+        font-weight: 800;
     }
 }
 .chart-container{
     margin: 0 auto;
 }
 ::ng-deep {
+    .mat-mdc-card-title{
+        font-size: 24px !important;
+    }
     .customTab .mat-mdc-tab-label-container {
         display: none !important;
     }
+    .mat-mdc-tab-label-container{
+        border-bottom: 1px solid $darkg-gray !important;
+    }
     .mat-mdc-tab .mdc-tab-indicator__content--underline {
-        border-color: #2196F3 !important;
+        border-color: $custom-primary-blue !important;
     }
     .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
-        font-weight: 500;
-        color: black !important;
+        font-weight: 800;
+        color: $black !important;
     }
     .mat-mdc-tab .mdc-tab__text-label {
-        color: #707070;
+        color: $light-color;
     }
 
     ngx-charts-horizontal-bar-series rect {
         height: 10px;
     }
+}
+
+
+
+.dashboard-content{
+    height: 100vh;
+    .row{
+        display: flex;
+        gap: 8px;
+        margin-bottom: 20px;
+
+        @media (min-width: 576px) { 
+            flex-wrap: wrap;        
+        }
+        @media (min-width: 768px) { 
+            flex-wrap: wrap;     
+         }
+         
+    }
+    .col-8{
+        @media (min-width:320px) { 
+            width: 100%;
+        }
+        @media (min-width: 576px) { 
+            width: 100%;
+            .flex-box{
+                gap: 20px;
+            }
+        }
+        @media (min-width: 992px) {
+            width: 67%;
+            .flex-box{
+                gap: 20px !important;
+            }
+         }
+        .flex-box{
+            align-items: center;
+            gap: 50px;
+        }
+    }
+    .col-4{
+        width: 30%;
+    }
+    .banner-bg{
+        background-image: url(../../assets/Rectangle\ 1107.svg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        position: relative;
+        .reffic-img{
+            @media (min-width: 992px) {
+                position: absolute !important;
+                right: 0;
+              }
+            @media (min-width: 320px) { 
+                position: static;
+            }
+            @media (min-width: 576px) { 
+                position: static;
+            }
+        }
+        .banner{
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            color: $white;
+            @media (min-width: 320px) { 
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+            @media (min-width: 576px) { 
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+            @media (min-width: 768px) {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+             }
+             @media (min-width: 992px) {
+                justify-content: flex-start;
+                text-align: left;
+              }
+            // @media (min-width: 1200px) { ... }
+
+            h3{
+                font-weight: bold;
+                font-size: 23px;
+                margin-bottom: 0;
+            }
+            .banner-content{
+                width: 530px;
+            }
+            
+        }
+    }
+    .flex-box{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+    .bar-card.abaly-card, .mat-mdc-card.abaly-card {
+        width: 280px ;
+    }
+    .bar-card .card-body .numBig, .mat-mdc-card .card-body .numBig {
+        font-size: 60px;
+        color: $primary-color;
+        font-weight: bold;
+    }
+    .bar-card{
+        margin-top: 2rem;
+        .mat-mdc-card-content{
+            margin-top: 23px;
+        }
+    }
+    
+   
+    .high-contain{
+        span{
+            font-weight: bold;
+            font-size: 14px;
+        }
+    }
+    .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+        font-weight: 700 !important;
+        color: black !important;
+    }
+
+    .mdc-button {
+        &:is(.mat-mdc-outlined-button) {
+            border: 1px solid $color-orange;
+            color: $color-orange;
+            padding: 20px 26px;
+            width: 234px;
+            height: 50px;
+            font-size: 20px;
+            img{
+                width: 25px;
+                height: 25px;
+            }
+        }
+       
+      }
+      ::ng-deep{
+        &.banner-button {
+            span.mdc-button__label{
+                display: flex !important; 
+                align-items: center;
+                gap: 13px;
+            }
+        }
+      }
+
 }

@@ -5,17 +5,13 @@
     </div>
     <div class="flex-box">
       <mat-form-field appearance="outline" class="search">
-        <mat-icon matPrefix>search</mat-icon>
+        <img matPrefix src="../../assets/Icon feather-search.svg" alt="">
         <input matInput type="search" placeholder="Search..." [(ngModel)]="searchTerm" (input)="applyFilter()">
       </mat-form-field>
-      
         <a  class="table-setting" (click)="openAddLoanDialog()">Add New Loan</a>
         <a class="table-setting"><mat-icon>filter_list</mat-icon> Filter</a>
         <a class="table-setting"> View <mat-icon>expand_more</mat-icon></a>
         <a class="table-setting"><mat-icon>download</mat-icon> Download </a>
-     
-     
-
     </div>
   </div>
   <div class="table-container">
@@ -99,13 +95,13 @@
         <td mat-cell *matCellDef="let loan" >
           <a href="#" class="action-text" *ngIf="loan.loanStatus === 'Submitted'">Submit Loan</a>
           <button mat-icon-button  (click)="editLoan(loan)">
-            <mat-icon>edit_square</mat-icon>
+            <img src="../../assets/Icon feather-edit.svg" alt="">
           </button>
           <button mat-icon-button color="warn" (click)="deleteLoan(loan)">
-            <mat-icon>backspace</mat-icon>
+            <img src="../../assets/Icon feather-delete.svg" alt="">
           </button>
           <button mat-icon-button  (click)="deleteLoan(loan)">
-            <mat-icon>more_vert</mat-icon>
+            <img src="../../assets/Icon feather-more-vertical.svg" alt="">
           </button>
         </td>
       </ng-container>
@@ -122,4 +118,4 @@
     </mat-paginator> -->
 
   </div>
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+  <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator> -->

@@ -46,7 +46,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     LoanDialogComponent,
     StylePaginatorDirective,
     LoanViewComponent,
-    AddLoansComponent
+    AddLoansComponent,
   ],
   imports: [
     BrowserModule,

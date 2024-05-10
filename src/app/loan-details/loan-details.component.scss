@@ -1,8 +1,5 @@
 // Variables
-$primary-color: #2786FF;
-$error-color: orangered;
-$rejected-color: red;
-$success-color: green;
+@import '../../assets/theme/style.scss';
 
 @mixin flex-box($gap: 40px) {
     display: flex;
@@ -30,16 +27,17 @@ $success-color: green;
     background: transparent;
     border: none;
     border-bottom: 1px solid $primary-color;
+    
 }
 
 @mixin header-row {
-    background-color: #e9f3ff !important;
+    background-color: $light-blue !important;
     white-space: nowrap;
 }
 
 @mixin cell {
     white-space: nowrap;
-    color: #707070;
+    color: $light-color;
     a {
         color: $primary-color;
         text-decoration: none;
@@ -49,6 +47,8 @@ $success-color: green;
         color: $primary-color;
         text-decoration: underline;
         cursor: pointer;
+        font-size: 16px;
+        margin-right: 28px;
     }
 }
 
@@ -78,9 +78,9 @@ $success-color: green;
 
     .head-badge{
         padding: 3px 20px;
-        border: 1px solid #2786FF;
+        border: 1px solid $primary-blue;
         border-radius: 60px;
-        color: black;
+        color: $black;
         background-color: #2786FF1A;
         p{
             margin-bottom: 0;
@@ -88,14 +88,27 @@ $success-color: green;
     }
 }
 .page-heading{
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 ::ng-deep {
+    input{
+        padding-left: 10px !important;
+    }
     .search {
         &.mat-mdc-form-field:not(.mat-mdc-paginator-page-size-select) .mat-mdc-text-field-wrapper {
             @include search-field;
+            
         }
+    }
+    .mobi-hide .mat-mdc-form-field:not(.mat-mdc-paginator-page-size-select) .mat-mdc-text-field-wrapper{
+        border-radius: 5px
+    }
+    .mat-mdc-table .mat-mdc-header-cell {
+        background: inherit;
+        font-weight: 700;
+        font-size: 16px;
     }
     .mat-mdc-header-row,
     .mat-mdc-header-cell {
@@ -103,14 +116,15 @@ $success-color: green;
     }
     .mat-mdc-cell {
         @include cell;
+       
     }
     .mat-column-actions {
         @include column-actions;
     }
     .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background{
-        border: 0.5px solid #707070;
+        border: 0.5px solid $light-color;
         border-radius: 4px; 
-        background-color: white
+        background-color: $white
     }
     .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background{
         border-radius: 4px; 

@@ -1,51 +1,6 @@
 {
   "loans": [
     {
-      "id": "3",
-      "loanNumber": "30-1-074785",
-      "createdDate": "2024-05-05T00:00:00.000Z",
-      "borrowerName": "Ayushman",
-      "loanType": "Business",
-      "amount": 2000,
-      "bdoName": "BDO 2",
-      "reviewerName": "Test 2",
-      "reviewerName1": "Santosh",
-      "reviewer": "Reviewer 3",
-      "loanStatus": "Submitted",
-      "loanCloser": "Vijay Kumar",
-      "action": "Approve"
-    },
-    {
-      "id": "4",
-      "loanNumber": "30-1-074785",
-      "createdDate": "2024-05-05T00:00:00.000Z",
-      "borrowerName": "Ayushman",
-      "loanType": "Business",
-      "amount": 2000,
-      "bdoName": "BDO 2",
-      "reviewerName": "xx",
-      "reviewerName1": "Vijay Kumar",
-      "reviewer": "Reviewer 3",
-      "loanStatus": "Rejected",
-      "loanCloser": "Santosh",
-      "action": "Approve"
-    },
-    {
-      "id": "5",
-      "loanNumber": "30-1-074785",
-      "createdDate": "2024-05-05T00:00:00.000Z",
-      "borrowerName": "Ayushman",
-      "loanType": "Business",
-      "amount": 2000,
-      "bdoName": "BDO 2",
-      "reviewerName": "TEst 1",
-      "reviewerName1": "Vijay Kumar",
-      "reviewer": "Reviewer 3",
-      "loanStatus": "Submitted",
-      "loanCloser": "aaa",
-      "action": "Approve"
-    },
-    {
       "id": "6",
       "loanNumber": "30-1-074785",
       "createdDate": "2024-05-05T00:00:00.000Z",
