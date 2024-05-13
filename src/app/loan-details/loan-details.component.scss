@@ -66,6 +66,9 @@
 
 .flex-box {
     @include flex-box;
+    @media(max-width: 1024px){
+        flex-wrap: wrap;
+    }
 }
 
 .table-setting {
@@ -100,6 +103,12 @@
         &.mat-mdc-form-field:not(.mat-mdc-paginator-page-size-select) .mat-mdc-text-field-wrapper {
             @include search-field;
             
+        }
+    }
+    .table-search {
+        &.mat-mdc-form-field:not(.mat-mdc-paginator-page-size-select) .mat-mdc-text-field-wrapper {
+            @include search-field;
+            border-radius: 0;
         }
     }
     .mobi-hide .mat-mdc-form-field:not(.mat-mdc-paginator-page-size-select) .mat-mdc-text-field-wrapper{

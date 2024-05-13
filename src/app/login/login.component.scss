@@ -14,9 +14,14 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-repeat: no-repeat;
   padding: 20px 60px 0  60px ;
   height: 100vh;
+
+  @media (max-width: 767px) { 
+    padding: 20px 20px 0  20px ;
+    height: auto;
+  }
+
  
   @media (min-width: 576px) { 
     height: 100vh;
@@ -35,10 +40,13 @@
   margin: 0 auto;
 
   .site-header {
+   
     .site-logo {
       img {
         width: 361px;
         height: 74px;
+        position: relative;
+        top: 10px;
       }
     }
   }
@@ -51,11 +59,15 @@
   .site-login-area {
     @include flex-center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: right;
     align-items: flex-end;
+    @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+      justify-content: center;
+    }
 
     @media (max-width: 940px) {
       flex-direction: column-reverse;
+      margin-top: 3rem;
       .flex-box{
         margin: 0 auto;
       }
@@ -73,17 +85,30 @@
     width: 556px;
     margin-top: -46px;
 
-    @media (min-width: 576px) { 
-      margin-top: 1rem;
+ @media (min-width: 960px) { 
+      margin-top: -34px;
+    }
+
+    @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+      margin-top:2rem !important; 
+  }
+
+
+    @media (min-width: 960px) { 
+      margin-top: -34px;
     }
 
     @media (max-width: 940px) {
       padding: 10px !important;
       margin-left: -10px;
+      margin-top: 0px;
       width: 100%;
     }
     @media (min-width:767px) and (max-width:1200px) {
       width: 98%;
+     }
+     @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+      width: 556px;
      }
     
   }
@@ -118,7 +143,27 @@
     color: $white;
   }
 }
+.page-footer{
+  display: flex;
+  align-items: self-end;
+  justify-content: space-between;
+  position: relative;
+  top: -50px;
+  color: $white;
 
+  @media (max-width: 940px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+
+  @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+
+}
 .form-area {
   text-align: center;
   position: relative;
@@ -128,6 +173,7 @@
       font-size: 32px;
       color: $dark-color;
       font-weight: bold;
+      margin-top: 2rem;
     }
 
     p {
@@ -168,7 +214,14 @@
   }
 
   .form-action {
-    margin-bottom: 80px;
+   
+    @media (max-width: 992px) {
+      margin-bottom: 80px !important;
+    }
+    @media (min-width: 1000px) {
+      margin-bottom:84px !important;
+    }
+
   }
 
   .form-footer {
@@ -177,6 +230,9 @@
     bottom: 0;
     color: #707070;
     left: 0;
+    text-align: left;
+    padding-left: 50px;
+    padding-right:  40px;
 
     a {
       color: $primary-color;
@@ -187,6 +243,14 @@
 
   .mat-mdc-form-field {
     margin-top: 1rem;
+    
+  @media (max-width: 767px) { 
+    width: 100%;
+  }
+  @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+    width: 462px;
+}
+    
     .mat-mdc-text-field-wrapper {
       width: 462px;
       height: 64px;
@@ -260,12 +324,15 @@
   line-height: 34px;
   margin: 0 auto;
   background: $form-background;
+  @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+    width: $form-width-desktop !important;
+  }
 
   @media (max-width: 940px) {
-    width: $form-width-mobile;
+    width: 100%;
   }
   @media (min-width:767px) and (max-width:1200px) {
-    width: 717px;
+    width: 606px;
    }
 }
 
@@ -324,9 +391,7 @@
       }
     }
 
-    .form-action {
-      margin-bottom: 150px;
-    }
+  
 
     .form-footer {
       font-size: 18px;
@@ -375,9 +440,13 @@
 @media(max-width: 767px) {
   .form-container{
     width: 100%;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 26px;
   }
   .main-section .site-header .site-logo img{
     width: 100%;
+    object-fit: contain;
   }
   
 }

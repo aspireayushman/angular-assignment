@@ -73,6 +73,7 @@
 
     @media(min-width: 1320px) and (max-width: 1600px) {
         grid-gap: 43px 10px;
+        
     }
 
 }
@@ -114,6 +115,9 @@
     left: 10px;
     @media(max-width: 1280px) {
         width:581px;
+    }
+    @media(min-width: 1300px) {
+        width:882px;
     }
     @media(min-width: 1320px) and (max-width: 1600px) {
         width:100% ;
@@ -276,6 +280,9 @@
     margin: 0 auto;
 }
 ::ng-deep {
+    .search.mat-mdc-form-field:not(.mat-mdc-paginator-page-size-select) .mat-mdc-text-field-wrapper{
+        border-radius: 0 !important;
+    }
     .mat-mdc-card-title{
         font-size: 24px !important;
     }
@@ -301,7 +308,14 @@
     }
 }
 
-
+.col-12{
+    width: 100%;
+    @media (min-width: 1000px) {
+        width: 98%;
+        padding-left: 10px;
+    }
+  
+}
 
 .dashboard-content{
     height: 100vh;
@@ -310,14 +324,12 @@
         gap: 8px;
         margin-bottom: 20px;
 
-        @media (min-width: 576px) { 
+        @media (max-width: 576px) { 
             flex-wrap: wrap;        
         }
-        @media (min-width: 768px) { 
-            flex-wrap: wrap;     
-         }
-         
+     
     }
+   
     .col-8{
         @media (min-width:320px) { 
             width: 100%;
@@ -328,15 +340,20 @@
                 gap: 20px;
             }
         }
+        @media(min-width: 1000px) {
+            width: 57% ;
+        }
         @media (min-width: 992px) {
-            width: 67%;
+            width: 64% ;
+            
             .flex-box{
-                gap: 20px !important;
+                gap: 20px ;
             }
          }
+        
         .flex-box{
             align-items: center;
-            gap: 50px;
+            gap: 48px 37px;
         }
     }
     .col-4{
@@ -447,6 +464,7 @@
        
       }
       ::ng-deep{
+        
         &.banner-button {
             span.mdc-button__label{
                 display: flex !important; 
@@ -454,6 +472,7 @@
                 gap: 13px;
             }
         }
-      }
+        
+    }
 
 }

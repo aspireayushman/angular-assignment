@@ -4,7 +4,7 @@
       <p class="head-badge">{{dataSource.data.length}}</p>
     </div>
     <div class="flex-box">
-      <mat-form-field appearance="outline" class="search">
+      <mat-form-field appearance="outline" class="search table-search">
         <img matPrefix src="../../assets/Icon feather-search.svg" alt="">
         <input matInput type="search" placeholder="Search..." [(ngModel)]="searchTerm" (input)="applyFilter()">
       </mat-form-field>
@@ -106,7 +106,7 @@
         </td>
       </ng-container>
     
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 

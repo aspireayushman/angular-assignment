@@ -61,21 +61,6 @@
       "action": "Approve"
     },
     {
-      "id": "10",
-      "loanNumber": "30-1-074786",
-      "createdDate": "2024-05-06T00:00:00.000Z",
-      "borrowerName": "Sneha",
-      "loanType": "Personal",
-      "amount": 1500,
-      "bdoName": "BDO 1",
-      "reviewerName": "",
-      "reviewerName1": "Jane Smith",
-      "reviewer": "Reviewer 2",
-      "loanStatus": "Submitted",
-      "loanCloser": "Mark Johnson",
-      "action": "Approve"
-    },
-    {
       "id": "11",
       "loanNumber": "30-1-074787",
       "createdDate": "2024-05-06T00:00:00.000Z",

@@ -49,6 +49,7 @@ hr.rule{
 .right-card{
   height: 613px;
   overflow-y: auto;
+  box-shadow: none;
 }
 
 .menu,
@@ -111,7 +112,7 @@ hr.rule{
 }
 
 .error-message {
-  color: darkred;
+  color: $error-red;
 }
 
 .header-stepper {

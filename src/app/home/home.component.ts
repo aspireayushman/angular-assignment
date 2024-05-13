@@ -11,7 +11,7 @@ export class HomeComponent {
     profile: false
   };
 
-  smallMenu: boolean = false;
+  smallMenu: boolean = true;
 
   @ViewChild('sidenav') sidenav: any;
   @ViewChild('toolbar') toolbar: any;

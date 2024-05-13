@@ -69,7 +69,7 @@
   </mat-sidenav>
 
   <!-- Main Content -->
-  <mat-sidenav-content >
+  <mat-sidenav-content [ngClass]="{'small-sidenav-content': smallMenu}" >
       <mat-toolbar color="primary" class="header">
         <div class="row-flex">
             <div class="col mobi-show dektop-hide" >
