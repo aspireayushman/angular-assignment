@@ -139,7 +139,7 @@
             </div>
         </div>
         <div class="col-4 c-m">
-          <mat-card class="analytic-card">
+          <mat-card class="analytic-card advertise">
             <mat-card-content>
               <div fxLayout="row" class="card-header" fxLayoutAlign="space-between center">
                   <div>
@@ -149,27 +149,7 @@
                     <mat-icon >more_horiz</mat-icon>
                   </div>
                 </div>
-                <div class="chart-container" style="width: 248px; height: 248px;">
-                  <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                    <ng-container *ngFor="let card of cards; let i=index">
-                      <circle
-                        [attr.cx]="150"
-                        [attr.cy]="150"
-                        [attr.r]="100"
-                        [attr.stroke-dasharray]="628"
-                        [attr.stroke-dashoffset]="628 - card.number * 6.28"
-                        [attr.stroke]="getStrokeColor(card.badgeColor)"
-                        stroke-width="30"
-                        fill="transparent"
-                        transform="rotate(-90 150 150)"
-                      ></circle>
-                    </ng-container>
-                  </svg>
-                  <div class="text-svg">
-                    <div class="text-total"> {{ total }} </div>
-                    <div class="svg-text"> Loan Count </div>
-                  </div>
-                </div>
+                
             </mat-card-content>
           </mat-card>
         </div>

@@ -158,9 +158,13 @@
       margin-bottom: -10px;
     }
 
-    @media(min-width: 940px) {
-      padding-top: 0 !important; 
-      padding-bottom: 0 !important;
+    // @media(min-width: 960px) {
+    //   padding-top: 0px ; 
+    //   padding-bottom: 0 ;
+    // }
+    @media(min-width: 540px) {
+      padding-top: 0px; 
+      padding-bottom: 0px;
     }
   }
   .mat-toolbar{

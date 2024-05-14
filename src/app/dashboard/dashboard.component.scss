@@ -321,12 +321,18 @@
     }
   
 }
-
+.mat-mdc-card-subtitle{
+    font-size: 18px;
+    font-weight: normal;
+}
+.advertise{
+    height: 368px !important;
+}
 .dashboard-content{
     height: 100vh;
     .row{
         display: flex;
-        gap: 8px;
+        gap: 36px;
         margin-bottom: 20px;
 
         @media (max-width: 576px) { 
@@ -358,7 +364,7 @@
         
         .flex-box{
             align-items: center;
-            gap: 42px 49px;
+            gap: 42px;
         }
     }
     .col-4{

@@ -1,122 +1,111 @@
 <div class="flex-box">
-    <div class="heading-box">
-      <h1 class="page-heading">Loans</h1>
-      <p class="head-badge">{{dataSource.data.length}}</p>
-    </div>
-    <div class="flex-box">
-      <mat-form-field appearance="outline" class="search table-search">
-        <img matPrefix src="../../assets/Icon feather-search.svg" alt="">
-        <input matInput type="search" placeholder="Search..." [(ngModel)]="searchTerm" (input)="applyFilter()">
-      </mat-form-field>
-        <a  class="table-setting" (click)="openAddLoanDialog()">Add New Loan</a>
-        <a class="table-setting"><mat-icon>filter_list</mat-icon> Filter</a>
-        <a class="table-setting"> View <mat-icon>expand_more</mat-icon></a>
-        <a class="table-setting"><mat-icon>download</mat-icon> Download </a>
-    </div>
+  <div class="heading-box">
+    <h1 class="page-heading">Loans</h1>
+    <p class="head-badge">{{dataSource.data.length}}</p>
   </div>
-  <div class="table-container">
-    <table mat-table [dataSource]="dataSource" >
+  <div class="flex-box">
+    <mat-form-field appearance="outline" class="search table-search">
+      <img matPrefix src="../../assets/Icon feather-search.svg" alt="">
+      <input matInput type="search" placeholder="Search..." [(ngModel)]="searchTerm" (input)="applyFilter()">
+    </mat-form-field>
+      <a  class="table-setting" (click)="openAddLoanDialog()">Add New Loan</a>
+      <a class="table-setting"><mat-icon>filter_list</mat-icon> Filter</a>
+      <a class="table-setting"> View <mat-icon>expand_more</mat-icon></a>
+      <a class="table-setting"><mat-icon>download</mat-icon> Download </a>
+  </div>
+</div>
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" >
+    <ng-container matColumnDef="select" sticky>
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let loan">
+        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(loan) : null"
+                      [checked]="selection.isSelected(loan)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
 
-
-      <ng-container matColumnDef="select" sticky>
-        <th mat-header-cell *matHeaderCellDef>
-          <mat-checkbox (change)="$event ? masterToggle() : null"
-                        [checked]="selection.hasValue() && isAllSelected()"
-                        [indeterminate]="selection.hasValue() && !isAllSelected()">
-          </mat-checkbox>
-        </th>
-        <td mat-cell *matCellDef="let loan">
-          <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(loan) : null"
-                        [checked]="selection.isSelected(loan)">
-          </mat-checkbox>
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="id" sticky>
-        <th mat-header-cell *matHeaderCellDef >Loan No.</th>
-        <td mat-cell *matCellDef="let loan">
-          <a [routerLink]="'/home/loan-view'">{{loan.loanNumber}}</a>
-        </td>
-      </ng-container>
-    
-      <ng-container matColumnDef="createdDate">
-        <th mat-header-cell *matHeaderCellDef>Created Date</th>
-        <td mat-cell *matCellDef="let loan">{{loan.createdDate | date}}</td>
-      </ng-container>
-    
-      <ng-container matColumnDef="borrowerName">
-        <th mat-header-cell *matHeaderCellDef>Borrower Name</th>
-        <td mat-cell *matCellDef="let loan">{{loan.borrowerName}}</td>
-      </ng-container>
-    
-      <ng-container matColumnDef="loanType">
-        <th mat-header-cell *matHeaderCellDef>Loan Type</th>
-        <td mat-cell *matCellDef="let loan">{{loan.loanType}}</td>
-      </ng-container>
-    
-      <ng-container matColumnDef="amount">
-        <th mat-header-cell *matHeaderCellDef>Amount</th>
-        <td mat-cell *matCellDef="let loan">{{loan.amount}}</td>
-      </ng-container>
-    
-      <ng-container matColumnDef="bdoName">
-        <th mat-header-cell *matHeaderCellDef>BDO Name</th>
-        <td mat-cell *matCellDef="let loan">{{loan.bdoName}}</td>
-      </ng-container>
-    
-      <ng-container matColumnDef="reviewerName">
-        <th mat-header-cell *matHeaderCellDef>Reviewer Name</th>
-        <td mat-cell *matCellDef="let loan">
-          {{loan.reviewerName}}
-          <a class="add-text" *ngIf="loan.reviewerName === ''" (click)="editLoan(loan)">+Add reviwer</a>
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="reviewerName1">
-        <th mat-header-cell *matHeaderCellDef>Reviewer Name II</th>
-        <td mat-cell *matCellDef="let loan">{{loan.reviewerName1}}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="loanCloser">
-        <th mat-header-cell *matHeaderCellDef>Loan Closer</th>
-        <td mat-cell *matCellDef="let loan">{{loan.loanCloser}}</td>
-      </ng-container>
-
-    
-      <ng-container matColumnDef="loanStatus" stickyEnd>
-        <th mat-header-cell *matHeaderCellDef >Loan Status</th>
-        <td mat-cell *matCellDef="let loan" stickyEnd>
-          <span [ngClass]="getStatusClass(loan.loanStatus)" > {{loan.loanStatus}}</span>
-        </td>
-      </ng-container>
+    <ng-container matColumnDef="id" sticky>
+      <th mat-header-cell *matHeaderCellDef >Loan No.</th>
+      <td mat-cell *matCellDef="let loan" >
+        <a [routerLink]="'/home/loan-view'">{{loan.loanNumber}}</a>
+      </td>
+    </ng-container>
   
-      <ng-container matColumnDef="actions" stickyEnd>
-        <th mat-header-cell *matHeaderCellDef >Actions</th>
-        <td mat-cell *matCellDef="let loan" >
-          <a href="#" class="action-text" *ngIf="loan.loanStatus === 'Submitted'">Submit Loan</a>
-          
-          <button mat-icon-button  (click)="editLoan(loan)">
-            <img src="../../assets/Icon feather-edit.svg" alt="">
-          </button>
-          <button mat-icon-button color="warn" (click)="deleteLoan(loan)">
-            <img src="../../assets/Icon feather-delete.svg" alt="">
-          </button>
-          <button mat-icon-button  (click)="deleteLoan(loan)">
-            <img src="../../assets/Icon feather-more-vertical.svg" alt="">
-          </button>
-        </td>
-      </ng-container>
-    
-      <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+    <ng-container matColumnDef="createdDate">
+      <th mat-header-cell *matHeaderCellDef>Created Date</th>
+      <td mat-cell *matCellDef="let loan" class="left">{{loan.createdDate | date}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="borrowerName" >
+      <th mat-header-cell *matHeaderCellDef >Borrower Name</th>
+      <td mat-cell *matCellDef="let loan" class="left">{{loan.borrowerName}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="loanType">
+      <th mat-header-cell *matHeaderCellDef>Loan Type</th>
+      <td mat-cell *matCellDef="let loan" class="left">{{loan.loanType}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef>Amount</th>
+      <td mat-cell *matCellDef="let loan">{{loan.amount}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="bdoName">
+      <th mat-header-cell *matHeaderCellDef>BDO Name</th>
+      <td mat-cell *matCellDef="let loan" class="left">{{loan.bdoName}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="reviewerName">
+      <th mat-header-cell *matHeaderCellDef>Reviewer Name</th>
+      <td mat-cell *matCellDef="let loan" class="left">
+        {{loan.reviewerName}}
+        <a class="add-text" *ngIf="loan.reviewerName === ''" (click)="editLoan(loan)">+Add reviwer</a>
+      </td>
+    </ng-container>
 
-    <!-- <mat-paginator style-paginator  showFirstLastButtons
-            [showTotalPages]="3"
-            [length]="dataSource.data.length"
-            [pageSize]="3"
-            [pageSizeOptions]="[3, 5, 10, 20]">
-    </mat-paginator> -->
+    <ng-container matColumnDef="reviewerName1">
+      <th mat-header-cell *matHeaderCellDef>Reviewer Name II</th>
+      <td mat-cell *matCellDef="let loan">{{loan.reviewerName1}}</td>
+    </ng-container>
 
-  </div>
-  <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator> -->
+    <ng-container matColumnDef="loanCloser">
+      <th mat-header-cell *matHeaderCellDef>Loan Closer</th>
+      <td mat-cell *matCellDef="let loan">{{loan.loanCloser}}</td>
+    </ng-container>
+
+  
+    <ng-container matColumnDef="loanStatus" stickyEnd>
+      <th mat-header-cell *matHeaderCellDef >Loan Status</th>
+      <td mat-cell *matCellDef="let loan" stickyEnd>
+        <span [ngClass]="getStatusClass(loan.loanStatus)" > {{loan.loanStatus}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions" stickyEnd>
+      <th mat-header-cell *matHeaderCellDef >Actions</th>
+      <td mat-cell *matCellDef="let loan" >
+        <a href="#" class="action-text" *ngIf="loan.loanStatus === 'Submitted'">Submit Loan</a>
+        
+        <button mat-icon-button  (click)="editLoan(loan)">
+          <img src="../../assets/Icon feather-edit.svg" alt="">
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteLoan(loan)">
+          <img src="../../assets/Icon feather-delete.svg" alt="">
+        </button>
+        <button mat-icon-button  (click)="deleteLoan(loan)">
+          <img src="../../assets/Icon feather-more-vertical.svg" alt="">
+        </button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
