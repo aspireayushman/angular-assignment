@@ -74,6 +74,7 @@
 .table-setting {
     @include table-setting;
 }
+
 .heading-box{
     display: flex;
     gap: 20px;
@@ -94,8 +95,15 @@
     font-weight: bold;
     font-size: 24px;
 }
-
+.action-bar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 ::ng-deep {
+    .mat-mdc-table thead{
+        height: 60px;
+    }
     input{
         padding-left: 10px !important;
     }

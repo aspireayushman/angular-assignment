@@ -94,6 +94,7 @@
         <th mat-header-cell *matHeaderCellDef >Actions</th>
         <td mat-cell *matCellDef="let loan" >
           <a href="#" class="action-text" *ngIf="loan.loanStatus === 'Submitted'">Submit Loan</a>
+          
           <button mat-icon-button  (click)="editLoan(loan)">
             <img src="../../assets/Icon feather-edit.svg" alt="">
           </button>

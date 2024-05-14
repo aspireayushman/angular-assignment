@@ -121,6 +121,7 @@
     }
     @media(min-width: 1320px) and (max-width: 1600px) {
         width:100% ;
+        
         .mat-mdc-card-title{
             width: 240px;
         }
@@ -139,6 +140,7 @@
     }
     &.analytic-card {
         width: 395px;
+        height: 340px;
 
         @media(max-width: 1280px) {
             width: 100%;
@@ -231,7 +233,10 @@
         border-radius: 4px;
     }
 }
-
+.mat-mdc-card-header {
+    display: flex;
+    padding: 5px 16px 0;
+}
 @media (max-width: 940px) {
     .mat-mdc-card.analytic-card,
     .bar-card {
@@ -311,7 +316,7 @@
 .col-12{
     width: 100%;
     @media (min-width: 1000px) {
-        width: 98%;
+        width: 99%;
         padding-left: 10px;
     }
   
@@ -353,7 +358,7 @@
         
         .flex-box{
             align-items: center;
-            gap: 48px 37px;
+            gap: 42px 49px;
         }
     }
     .col-4{
@@ -423,6 +428,7 @@
     }
     .bar-card.abaly-card, .mat-mdc-card.abaly-card {
         width: 280px ;
+       
     }
     .bar-card .card-body .numBig, .mat-mdc-card .card-body .numBig {
         font-size: 60px;
@@ -435,7 +441,9 @@
             margin-top: 23px;
         }
     }
-    
+    .progress-card{
+        height: 368px;
+    }
    
     .high-contain{
         span{
